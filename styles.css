@@ -1,0 +1,75 @@
+:root {
+    color-scheme: light dark;
+    --background: #041225;
+    --surface: #0b2947;
+    --surface-raised: #10385e;
+    --text: #f5fbff;
+    --muted: #b8ccdc;
+    --accent: #65e6bd;
+    --border: rgba(184, 204, 220, 0.22);
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: radial-gradient(circle at top right, #0b3e69 0, var(--background) 46rem);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.6;
+}
+
+a { color: var(--accent); }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+
+.page {
+    width: min(100% - 2rem, 70rem);
+    margin: 0 auto;
+    padding: 4rem 0 3rem;
+}
+
+.hero { padding: 4rem 0 3rem; }
+.eyebrow { color: var(--accent); font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+h1 { margin: 0.2rem 0 1rem; font-size: clamp(2.5rem, 8vw, 5.5rem); line-height: 1.02; }
+h2 { margin-top: 0; line-height: 1.2; }
+.lede { max-width: 46rem; color: var(--muted); font-size: 1.2rem; }
+.updated { color: var(--muted); }
+
+.link-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1rem;
+}
+
+.card, .support-callout {
+    display: block;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    background: linear-gradient(145deg, var(--surface-raised), var(--surface));
+}
+
+.card { color: var(--text); text-decoration: none; }
+.card p { color: var(--muted); }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+.document { max-width: 48rem; }
+.document nav { margin-bottom: 3rem; }
+.document header { margin-bottom: 3rem; }
+.document h1 { font-size: clamp(2.5rem, 8vw, 4rem); }
+.document section { margin: 2.5rem 0; }
+.document section p, .document li { color: var(--muted); }
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .card { transition: transform 160ms ease, border-color 160ms ease; }
+}
